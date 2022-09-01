@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-ROUND_POINTS = {0:0,1:2,2:1,3:1,4:1,5:1}
+ROUND_POINTS = {'ronda-0':0,'ronda-1':2,'ronda-2':1,'ronda-3':1,'ronda-4':1,'ronda-5':1}
 
 def flatten(l):
     return [item for sublist in l for item in sublist]
@@ -36,7 +36,7 @@ for pa,pb in zip(pstart,pend):
         word_points[word]=0
         for i,round in enumerate(rounds):
             if word in round:
-                word_points[word]+=ROUND_POINTS[i]
+                word_points[word]+=ROUND_POINTS['ronda-'+str(i)]
 
     #pdict['score'] = word_points
     pdict.update(word_points)
